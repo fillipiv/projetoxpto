@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DashCard - Login</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="../css/estilo.css">
+    <script src="../js/interna.js"></script>
+
+
+    <!-- <style>
+        .container{
+            position: absolute;
+            top: 270px;
+            left: 350px;
+            
+            }
+
+    </style> -->
+
+</head>
+
+<body>
+
+<!-- 
+
+    <div class="container d-flex h-100">
+        <div class="row align-items-center w-100">
+            <div class="media">
+                <img src="..." class="mr-3" alt="...">
+                <div class="media-body">
+                  <h5 class="mt-0">Media heading</h5>
+                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                </div>
+              </div>
+             <div class="col-1 mx-auto"><button type="submit" class="btn btn-primary" onclick="fazerLogout()">Logout</button></div>
+           <div class="col-2 mx-auto"></div>
+       </div>
+        <div class="row align-items-baseline">
+            <label>Parceiro:</label>
+            <select class="campo_escolha" required>
+                <option value=""></option>
+                <option value="MAGALU Financeira">MAGALU Financeira</option>
+                <option value="SANTANDER Cartoes">SANTANDER Cartoes</option>
+                <option value="ITAU/Uniclass Cards">ITAU/Uniclass Cards</option>
+                <option value="SUBMARINO Cartoes">SUBMARINO Cartoes</option>
+                <option value="HIPERCARD">HIPERCARD</option>
+                <option value="ITAU Virtual">ITAU Virtual</option>
+                <option value="PICPAY Cartoes">PICPAY Cartoes</option>
+                <option value="SAMS CLUB Mastercard">SAMS CLUB Mastercard</option>
+                <option value="EXTRA Cartoes VISA">EXTRA Cartoes VISA</option>
+                <option value="CARREFOUR Credito Master">CARREFOUR Credito Master</option>
+            </select> 
+
+            <select name="parceiros" id="parceiros"></select>
+            
+        </div>
+
+       <div class="vol_parceiros"></div>
+
+        </div>
+ 
+    </div>
+ -->
+
+ <body onload="validaLogin()">
+    <div class="container h-100">
+        <div class="row justify-content-between">
+            <div id="foto" class="col-8">
+                <div class="media">
+                    <div id="imgUser"></div>
+                    <h5 class="mt-0">
+                        <br>
+                        <p id="dadosUser"></p>
+                    </h5>
+                </div>
+            </div>
+            <div class="col-4 text-right">
+                <button class="btn btn-primary" onclick="logout()">logout</button>
+            </div>
+        </div>
+
+            <div class="row w-100" style="height: 100px;margin-top:50px">
+                <div class="col-8 mx-auto" id="opcoes">
+                    <!-- aqui vai combobox de agentes -->
+                    <label>Parceiro: </label>
+                    <select id="parceiros"></select>
+                </div>
+            </div>
+
+            <div class="row w-100">
+                <div class="col-10 mx-auto" id="tabela">
+                    <!-- aqui vai a lista de departamentos -->
+                    <div id="tabela"></div>
+                </div>
+            </div>
+
+    </div>
+
+
+
+</body>
+
+</html>
