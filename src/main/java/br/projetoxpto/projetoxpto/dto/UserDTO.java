@@ -9,11 +9,13 @@ public class UserDTO {
     private String nome;
     private String email;
     private String racf;
+    private String linkfoto;
 
     public UserDTO(User user) {
         this.nome = user.getNome();
         this.email = user.getEmail();
         this.racf = user.getRacf();
+        this.linkfoto = user.getLinkfoto();
     }
 
 }
