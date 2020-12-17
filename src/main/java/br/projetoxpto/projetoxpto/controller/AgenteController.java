@@ -19,19 +19,18 @@ public class AgenteController {
     @Autowired
     private AgenteDAO dao; 
 
-    @GetMapping("/listaagentes")
+    @GetMapping("/listaagentes") // dúvida como retornar apenas a info da coluna nome_agente
     public List<Agente> listarAgentes(){
-        List<Agente> lista = (List<Agente>) dao.findByNomeAgente();
+        List<Agente> lista = (List<Agente>) dao.findAll();
         
         return lista; 
     }
 
-    @GetMapping("/top10")
+    @GetMapping("/top10") // vai retornar o nome + volume transação? Não deve apresentar id parceiro
     public List<Agente> listarTop10(){
-        List<Agente> lista = (List<Agente>) dao.findByTop10ByOrderByVolumeTransacionalDesc();
+        List<Agente> lista = (List<Agente>) dao.findTop10ByOrderByVolumeTransacionalDesc();
 
         return lista;
         
     }
-    
 }
