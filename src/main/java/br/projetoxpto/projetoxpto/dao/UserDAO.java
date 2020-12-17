@@ -4,13 +4,15 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
+import br.projetoxpto.projetoxpto.model.User;
+
 //CRUD - Create Read Update - Delete
 public interface UserDAO extends CrudRepository<User, Integer> {
-    public User findByEmail(String email);
+    //public User findByEmail(String email);
 
     public User findByEmailAndPassword(String email, String password);
 
-    public User findByEmailOrCpf(String email, String cfp);
+    public User findByEmailOrRacf(String email, String racf);
 
     @Query(value = "Select new User(u.name, u.email) from User u u.id = :cod ")
     public User buscaPorId(@Param("cod") Integer codigo);
