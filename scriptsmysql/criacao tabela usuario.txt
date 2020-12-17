@@ -1,0 +1,20 @@
+create database usuario;
+use usuario;
+
+CREATE TABLE `tbl_usuario` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `email` varchar(100) NOT NULL,
+  `linkfoto` varchar(200) DEFAULT NULL,
+  `nome` varchar(100) NOT NULL,
+  `racf` varchar(7) NOT NULL,
+  `senha` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UK_email_usuario` (`email`),
+  UNIQUE KEY `UK_racf_usuario` (`racf`)
+);
+
+insert into tbl_usuario values (null, 'fillipiv@gmail.com', 'https://hennesseyonline.com/wp-content/uploads/2015/05/staff-placeholder-male.jpg', 'Fillipi Valadares', 'fillipi', '1234');
+insert into tbl_usuario values (null, 'laisrd03@gmail.com', 'https://hennesseyonline.com/wp-content/uploads/2015/05/staff-placeholder-female.jpg', 'Lais Rodrigues', 'lasanro', '1234');
+insert into tbl_usuario values (null, 'estnmartins@gmail.com', 'https://hennesseyonline.com/wp-content/uploads/2015/05/staff-placeholder-male.jpg', 'Estevam Martins', 'estnmar', '1234');
+insert into tbl_usuario values (null, 'caetano.garcia@gmail.com', 'https://hennesseyonline.com/wp-content/uploads/2015/05/staff-placeholder-male.jpg', 'Lais Rodrigues', 'gcaetan', '1234');
+insert into tbl_usuario values (null, 'andreespm@yahoo.com.br', 'https://hennesseyonline.com/wp-content/uploads/2015/05/staff-placeholder-male.jpg', 'Andre Lucio', 'alofric', '1234');
