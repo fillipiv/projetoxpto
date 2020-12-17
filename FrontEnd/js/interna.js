@@ -23,7 +23,7 @@ function buscarParceiros() {
     let user = document.getElementById("selUser")
     let id = user[user.selectedIndex].value
 
-    fetch("http://localhost:8080/user/id/" + id)
+    fetch("http://localhost:8080/agente/top10/" + id)
         .then( res => tratarReposta(res))
 }
 
@@ -55,7 +55,7 @@ function exibirDados(dados){
 }
 
 function buscarParceiros() {
-    fetch("http://localhost:8080/user/all")
+    fetch("http://localhost:8080/agente/listaagente")
         .then(res => res.json())
         .then(res => exibirParceiros(res))
 
@@ -64,7 +64,7 @@ function buscarParceiros() {
 function exibirParceiros(lista){
     let opcoes=''
     for(let i=0; i < lista.length; i++){
-        opcoes = opcoes + `<option value = ${lista[i].idAgente}> ${lista[i].nameAgente} </option>`
+        opcoes = opcoes + `<option value = ${lista[i].idAgente}> ${lista[i].nomeAgente} </option>`
     
     }
     
