@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+//import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -27,12 +28,12 @@ public class Agente {
     private int idAgente;
 
     @Column(name = "nome_agente", length = 100, nullable = false)
-    private String nameAgente;
+    private String nomeAgente;
 
     @Column(name = "volume_transacional", nullable = false)
     private float volumeTransacional;
 
-    @OneToMany(mappedBy = "mtb310_ag_financeiro")
-    @JsonIgnoreProperties("mtb310_ag_financeiro")
+    @OneToMany //(mappedBy = "mtb310_ag_financeiro")
+    @JsonIgnoreProperties("agente")
     private List<Transacao> transacao;
 }

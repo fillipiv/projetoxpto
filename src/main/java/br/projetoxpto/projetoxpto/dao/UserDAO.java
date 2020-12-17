@@ -12,6 +12,8 @@ public interface UserDAO extends CrudRepository<User, Integer> {
 
     public User findByEmailOrRacf(String email, String racf);
 
+
+
     /* @Query(value = "Select new User(u.name, u.email) from User u u.id = :cod ")
     public User buscaPorId(@Param("cod") Integer codigo); */
 

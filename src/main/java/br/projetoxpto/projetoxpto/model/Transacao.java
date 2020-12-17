@@ -42,12 +42,12 @@ public class Transacao {
     @Column(name = "status", nullable = false)
     private Integer status;
 
-    @Column(name = "ag_financeiro", nullable = false)
-    private Integer agFinanceiro;
+    //@Column(name = "ag_financeiro", nullable = false)
+    //private Integer agFinanceiro;
 
-    @ManyToOne
-    @JoinColumn(name = "id_agente")
-    @JsonIgnoreProperties("mtb310_transaction")
+   @ManyToOne
+   @JoinColumn (name = "ag_financeiro")
+   @JsonIgnoreProperties("transacao") //talvez seja "agente"
     private Agente agente; 
 
 }
