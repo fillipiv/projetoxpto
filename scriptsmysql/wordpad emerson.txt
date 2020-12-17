@@ -1,0 +1,47 @@
+//EXEMPLO SCRIPT TABELA USUÁRIO
+
+
+CREATE TABLE `tbl_usuario` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `email` varchar(100) NOT NULL,
+  `linkfoto` varchar(200) DEFAULT NULL,
+  `nome` varchar(100) NOT NULL,
+  `racf` varchar(7) NOT NULL,
+  `senha` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UK_email_usuario` (`email`),
+  UNIQUE KEY `UK_racf_usuario` (`racf`)
+);
+
+insert into tbl_usuario values (null, 'emerson@paduan.pro.br', 'https://hennesseyonline.com/wp-content/uploads/2015/05/staff-placeholder-male.jpg', 'Emerson Paduan', '12345', '1234');
+
+=====================
+
+//MODELO PARA FAZER A CONSULTA AGRUPADA
+
+import lombok.Getter;
+
+@Getter
+public class ContagemStatus {
+    private String agente;
+    private int status;
+    private long count;
+
+    public ContagemStatus(String agente, int status, long count) {
+        this.agente = agente;
+        this.status = status;
+        this.count = count;
+    }
+
+}
+
+
+//CONSULTA GRAUPADA NA TRANSAÇÃO
+
+@Query("SELECT new br.paduan.projFinal.dto.ContagemStatus(t.agente.nomeAgente, status, COUNT(t.status)) FROM Transacao AS t WHERE t.agente.idAgente = ?1 GROUP BY t.agente.nomeAgente, t.status ORDER By status")
+List<ContagemStatus> countStatusByAgent(int idAgente);
+
+
+// CONSULTA NO AGENTE FINANCEIRO
+
+public List<AgFinanceiro> findTop10ByOrderByVolumeTransacionalDesc();
