@@ -1,7 +1,24 @@
 package br.projetoxpto.projetoxpto.model;
 
-import java.security.Timestamp;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+
+@Entity
+@Table(name = "mtb310_transaction")
+@Getter @Setter @NoArgsConstructor
 public class Transacao {
     
 
@@ -11,7 +28,7 @@ public class Transacao {
     private int idTransacao;
 
     @Column(name = "data_hora", nullable = false)
-    private Timestamp DataHora;
+    private String DataHora;
 
     @Column(name = "dispositivo", nullable = false)
     private Integer dispositivo;
@@ -21,4 +38,16 @@ public class Transacao {
 
     @Column(name = "valor_aut", nullable = false)
     private float valorAut;
+
+    @Column(name = "status", nullable = false)
+    private Integer status;
+
+    @Column(name = "ag_financeiro", nullable = false)
+    private Integer agFinanceiro;
+
+    @ManyToOne
+    @JoinColumn(name = "id_agente")
+    @JsonIgnoreProperties("mtb310_transaction")
+    private Agente agente; 
+
 }

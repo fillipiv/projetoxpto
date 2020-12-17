@@ -1,11 +1,16 @@
 package br.projetoxpto.projetoxpto.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,4 +31,8 @@ public class Agente {
 
     @Column(name = "volume_transacional", nullable = false)
     private float volumeTransacional;
+
+    @OneToMany(mappedBy = "mtb310_ag_financeiro")
+    @JsonIgnoreProperties("mtb310_ag_financeiro")
+    private List<Transacao> transacao;
 }
