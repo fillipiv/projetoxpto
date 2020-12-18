@@ -20,7 +20,7 @@
         crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="../css/estilo.css">
-    <script src="../js/interna.js"></script>
+    <!-- <script src="../js/interna.js"></script> -->
     <script src="../js/busca.js"></script>
 
 </head>
@@ -40,33 +40,36 @@
             <div class="col-4 text-right">
                 <button class="btn btn-primary" onclick="logout()">logout</button>
             </div>
+            <div class="col-6 text-right">
+                <button class="btn btn-primary" onclick="voltar()">Voltar</button>
+            </div>
         </div>
 
             <div class="row w-100" style="height: 100px;margin-top:50px">
                 <div class="col-5 mx-auto">
-                    <div class="row badge badge-primary text-wrap p-2 text-left" style="width: 15rem"><b>Parceiro</b></div>
-                    <div id="dadosParceiro"></div>
+                    <div class="row badge badge-primary text-wrap p-2 text-left" style="width: 9rem"><b>Parceiro</b></div>
+                        <div id="dadosParceiro"></div>
                 </div>
             </div>
 
             <div class="row w-100" style="height: 100px;margin-top:50px">
                 <div class="col-5 mx-auto">
-                    <div class="row badge badge-primary text-wrap p-2 text-left" style="width: 15rem"><b>Sucesso</b></div>
-                    <div id="dadosParceiro"></div>
+                    <div class="row badge badge-primary text-wrap p-2 text-left" style="width: 9rem"><b>Sucesso</b></div>
+                    <div id="sucesso"></div>
                 </div>
             </div>
             
             <div class="row w-100" style="height: 100px;margin-top:50px">
                 <div class="col-5 mx-auto">
-                    <div class="row badge badge-primary text-wrap p-2 text-left" style="width: 15rem"><b>Falhas</b></div>
-                    <div id="dadosParceiro"></div>
+                    <div class="row badge badge-primary text-wrap p-2 text-left" style="width: 9rem"><b>Falhas</b></div>
+                    <div id="falhas" class="text-left"></div>
                 </div>
             </div>
 
             <div class="row w-100" style="height: 100px;margin-top:50px">
                 <div class="col-5 mx-auto">
-                    <div class="row badge badge-primary text-wrap p-2 text-left" style="width: 15rem"><b>Fraudes</b></div>
-                    <div id="dadosParceiro"></div>
+                    <div class="row badge badge-primary text-wrap p-2 text-left" style="width: 9rem"><b>Fraudes</b></div>
+                    <div id="fraudes"></div>
                 </div>
             </div>
 

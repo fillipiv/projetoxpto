@@ -10,6 +10,6 @@ import br.projetoxpto.projetoxpto.model.Transacao;
 
 public interface TransacaoDAO extends CrudRepository<Transacao, Integer>{
     
-@Query("SELECT new br.projetoxpto.projetoxpto.dto.ContagemStatus(t.agente.nomeAgente, status, COUNT(t.status)) FROM Transacao AS t WHERE t.agente.idAgente = ?1 GROUP BY t.agente.nomeAgente, t.status ORDER By status")
+@Query("SELECT new br.projetoxpto.projetoxpto.dto.ContagemStatus(t.agente.nomeAgente, t.agente.volumeTransacional, status, COUNT(t.status)) FROM Transacao AS t WHERE t.agente.idAgente = ?1 GROUP BY t.agente.nomeAgente, t.status ORDER By status")
 List<ContagemStatus> countStatusByAgent(int idAgente);
 }

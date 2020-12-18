@@ -52,7 +52,7 @@ function exibirParceiros(lista){
         opcoes = opcoes + `<option value = ${lista[i].idAgente}> ${lista[i].nomeAgente} </option>`
     
     }
-        document.getElementById("parceiros").innerHTML = opcoes
+        document.getElementById("parceiros").innerHTML = opcoes;
 }
 
 function verAgente(){
@@ -60,11 +60,12 @@ function verAgente(){
     let nomeAgente = selecao.options[selecao.selectedIndex].text;
     let idAgente = selecao.options[selecao.selectedIndex].value;
 
-    let objAgente = {
-        idAgente: idAgente,
+     let objAgente = {
+        id: idAgente,
         nome: nomeAgente
     }
 
     localStorage.setItem("buscaLogged", JSON.stringify(objAgente));
     window.location = "busca.html";
+
 }

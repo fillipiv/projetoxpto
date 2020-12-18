@@ -9,9 +9,11 @@ public class ContagemStatus {
     private String agente;
     private int status;
     private long count;
+    private float volumeTransacional;
 
-    public ContagemStatus(String agente, int status, long count) {
+    public ContagemStatus(String agente, float volumeTransacional, int status, long count) {
         this.agente = agente;
+        this.volumeTransacional = volumeTransacional;
         this.status = status;
         this.count = count;
     }
