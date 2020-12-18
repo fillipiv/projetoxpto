@@ -20,42 +20,36 @@ function logout(){
 
 function buscarParceiros() {
     //let id = document.getElementById("userId").value
-    let user = document.getElementById("selUser")
-    let id = user[user.selectedIndex].value
+/*     let user = document.getElementById("selUser")
+    let id = user[user.selectedIndex].value */
 
-    fetch("http://localhost:8080/agente/top10/" + id)
-        .then( res => tratarReposta(res))
+    fetch("http://localhost:8080/agente/top10")
+        .then(res => res.json())
+        .then(res => exibirDados(res))
 }
 
-function tratarReposta(res){
+/* function tratarReposta(res){
     if(res.status == "valido"){
         res.json().then(res => exibirDados(res))
     }else{
-        document.getElementById("dadosParceiro").innerHTML = "Usuario não encontrado"
+        document.getElementById("dadosParceiro").innerHTML = "Parceiro não encontrado"
     }
-}
+} */
 
 function exibirDados(dados){
-    let parceiro = dados.parceiros
-    let tabela = "<table> <tr> <th>Id_Anuncio</th> <th>Descrição</th> <th>Valor</th> </tr>"
+    let tabela = "<table> <tr> <th>Parceiros</th> <th>Valor Transacionado</th> </tr>"
 
-    if(parceiro.length == 0) {
-        document.getElementById("dadosParceiro").innerHTML = "Este usuario não possui anuncios"
-    }else{
-        
-        for(let i=0; i < parceiro.length; i++) {
-            tabela = tabela + `<tr> <td>${parceiro[i].idParceiro}</td> <td>${parceiro[i].descricao}</td> <td>${parceiro[i].valor}</td> </tr>`
-        }
+         for(let i=0; i < dados.length; i++) {
+            tabela = tabela + `<tr> <td>${dados[i].nomeAgente}</td> <td>${dados[i].volumeTransacional}</td> </tr>`
+         }
 
         tabela = tabela + "</table>"
         document.getElementById("dadosParceiro").innerHTML = tabela
-        
-    }
-         
+
 }
 
 function buscarParceiros() {
-    fetch("http://localhost:8080/agente/listaagente")
+    fetch("http://localhost:8080/agente/listaagentes")
         .then(res => res.json())
         .then(res => exibirParceiros(res))
 
