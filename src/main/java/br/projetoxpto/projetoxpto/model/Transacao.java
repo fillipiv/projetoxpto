@@ -45,9 +45,9 @@ public class Transacao {
     //@Column(name = "ag_financeiro", nullable = false)
     //private Integer agFinanceiro;
 
-   @ManyToOne
-   @JoinColumn (name = "ag_financeiro")
-   @JsonIgnoreProperties("transacao") //talvez seja "agente"
-    private Agente agente; 
+   //@ManyToOne
+   //@JoinColumn (name = "ag_financeiro")
+   //@JsonIgnoreProperties("transacao") //talvez seja "agente"
+   //private Agente agente; 
 
 }

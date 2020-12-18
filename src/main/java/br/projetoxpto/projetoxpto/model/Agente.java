@@ -33,7 +33,7 @@ public class Agente {
     @Column(name = "volume_transacional", nullable = false)
     private float volumeTransacional;
 
-    @OneToMany //(mappedBy = "mtb310_ag_financeiro")
-    @JsonIgnoreProperties("agente")
-    private List<Transacao> transacao;
+    //@OneToMany //(mappedBy = "mtb310_ag_financeiro")
+    //@JsonIgnoreProperties("agente")
+    //private List<Transacao> transacao;
 }
