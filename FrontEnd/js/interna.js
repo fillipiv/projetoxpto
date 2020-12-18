@@ -10,7 +10,8 @@ function validaLogin(){
     //document.getElementById("dadosUser").innerHTML = user.name + " : " + user.email
     document.getElementById("dadosUser").innerHTML = `<b>${user.nome} </b> : (${user.email})`
     document.getElementById("imgUser").innerHTML = `<img src= ${user.linkfoto}>`
-    buscarParceiros()    
+    buscarParceiros()
+    buscarDados()    
 }
 
 function logout(){
@@ -18,23 +19,12 @@ function logout(){
     window.location = "index.html"
 }
 
-function buscarParceiros() {
-    //let id = document.getElementById("userId").value
-/*     let user = document.getElementById("selUser")
-    let id = user[user.selectedIndex].value */
-
+function buscarDados() {
+ 
     fetch("http://localhost:8080/agente/top10")
         .then(res => res.json())
         .then(res => exibirDados(res))
 }
-
-/* function tratarReposta(res){
-    if(res.status == "valido"){
-        res.json().then(res => exibirDados(res))
-    }else{
-        document.getElementById("dadosParceiro").innerHTML = "Parceiro não encontrado"
-    }
-} */
 
 function exibirDados(dados){
     let tabela = "<table> <tr> <th>Parceiros</th> <th>Valor Transacionado</th> </tr>"
@@ -57,10 +47,24 @@ function buscarParceiros() {
 
 function exibirParceiros(lista){
     let opcoes=''
+
     for(let i=0; i < lista.length; i++){
         opcoes = opcoes + `<option value = ${lista[i].idAgente}> ${lista[i].nomeAgente} </option>`
     
     }
-    
-    document.getElementById("parceiros").innerHTML = opcoes
+        document.getElementById("parceiros").innerHTML = opcoes
+}
+
+function verAgente(){
+    let selecao = document.getElementById("parceiros");
+    let nomeAgente = selecao.options[selecao.selectedIndex].text;
+    let idAgente = selecao.options[selecao.selectedIndex].value;
+
+    let objAgente = {
+        idAgente: idAgente,
+        nome: nomeAgente
+    }
+
+    localStorage.setItem("buscaLogged", JSON.stringify(objAgente));
+    window.location = "busca.html";
 }
