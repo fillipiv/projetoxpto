@@ -7,7 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-//import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -33,7 +32,7 @@ public class Agente {
     @Column(name = "volume_transacional", nullable = false)
     private float volumeTransacional;
 
-    //@OneToMany //(mappedBy = "mtb310_ag_financeiro")
-    //@JsonIgnoreProperties("agente")
-    //private List<Transacao> transacao;
+    @OneToMany (mappedBy = "agente")
+    @JsonIgnoreProperties("agente")
+    private List<Transacao> transacao;
 }

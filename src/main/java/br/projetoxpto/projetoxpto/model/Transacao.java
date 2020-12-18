@@ -28,7 +28,7 @@ public class Transacao {
     private int idTransacao;
 
     @Column(name = "data_hora", nullable = false)
-    private String DataHora;
+    private String dataHora;
 
     @Column(name = "dispositivo", nullable = false)
     private Integer dispositivo;
@@ -42,12 +42,9 @@ public class Transacao {
     @Column(name = "status", nullable = false)
     private Integer status;
 
-    //@Column(name = "ag_financeiro", nullable = false)
-    //private Integer agFinanceiro;
-
-   //@ManyToOne
-   //@JoinColumn (name = "ag_financeiro")
-   //@JsonIgnoreProperties("transacao") //talvez seja "agente"
-   //private Agente agente; 
+   @ManyToOne
+   @JoinColumn (name = "ag_financeiro")
+   @JsonIgnoreProperties("transacao") //talvez seja "agente"
+   private Agente agente; 
 
 }
