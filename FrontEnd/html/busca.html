@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DashCard - Home</title>
+    <title>DashCard - Relatorio Parceiro</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -21,10 +21,11 @@
 
     <link rel="stylesheet" href="../css/estilo.css">
     <script src="../js/interna.js"></script>
- 
+    <script src="../js/busca.js"></script>
+
 </head>
 
- <body onload="validaLogin()">
+<body onload="validaLogin()">
     <div class="container h-100">
         <div class="row justify-content-between">
             <div id="foto" class="col-8">
@@ -42,24 +43,41 @@
         </div>
 
             <div class="row w-100" style="height: 100px;margin-top:50px">
-                <div class="col-8 mx-auto" id="opcoes">
-                    <!-- aqui vai combobox de agentes -->
-                    <label>Parceiro:</label>
-                    <select id="parceiros" onchange="verAgente()"></select>
+                <div class="col-5 mx-auto">
+                    <div class="row badge badge-primary text-wrap p-2 text-left" style="width: 15rem"><b>Parceiro</b></div>
+                    <div id="dadosParceiro"></div>
                 </div>
             </div>
 
-            <div class="row w-100">
-                <div class="col-10 mx-auto" id="tabela">
-                    <!-- aqui vai a lista de departamentos -->
-                    <div id="dadosParceiro" class="border"></div>
+            <div class="row w-100" style="height: 100px;margin-top:50px">
+                <div class="col-5 mx-auto">
+                    <div class="row badge badge-primary text-wrap p-2 text-left" style="width: 15rem"><b>Sucesso</b></div>
+                    <div id="dadosParceiro"></div>
                 </div>
             </div>
+            
+            <div class="row w-100" style="height: 100px;margin-top:50px">
+                <div class="col-5 mx-auto">
+                    <div class="row badge badge-primary text-wrap p-2 text-left" style="width: 15rem"><b>Falhas</b></div>
+                    <div id="dadosParceiro"></div>
+                </div>
+            </div>
+
+            <div class="row w-100" style="height: 100px;margin-top:50px">
+                <div class="col-5 mx-auto">
+                    <div class="row badge badge-primary text-wrap p-2 text-left" style="width: 15rem"><b>Fraudes</b></div>
+                    <div id="dadosParceiro"></div>
+                </div>
+            </div>
+
+
+            <!-- <div class="row w-100">
+                <div class="col-10 mx-auto" id="tabela">
+                 
+                </div>
+            </div> -->
 
     </div>
 
-
-
 </body>
-
 </html>
